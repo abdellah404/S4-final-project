@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./RegisterPage.css";
-import { axiosClient} from "../../api/axios";
+import { axiosClient } from "../../api/axios";
 
 function RegisterPage() {
   const userSchema = Yup.object({
@@ -37,19 +37,14 @@ function RegisterPage() {
   });
 
   const onSubmit = async (data) => {
-
     try {
-        await axiosClient.get("/sanctum/csrf-cookie");
-  
-        const resp = await axiosClient.post("/register", data);
-        console.log("Success:", resp);
-      } catch (error) {
-        console.error("Registration failed:", error);
-      }
-    };
-   
-  
-  
+      data.token = "sb5icMcSTO";
+      const resp = await axiosClient.post("api/register", data);
+      console.log("Success:", resp);
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
+  };
 
   return (
     <form method="post" onSubmit={handleSubmit(onSubmit)}>
