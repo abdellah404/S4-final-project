@@ -1,0 +1,17 @@
+.nav-item .nav-link {
+  font-size: 1.2rem; /* Larger font size for nav links */
+  color: #000000; /* Choose a color that stands out */
+  height: 50px;
+  
+}
+
+.navbar {
+  height: 100%;
+  border-bottom: 0.01rem rgb(238, 238, 238) solid;
+  box-shadow: 0 4px 6px rgba(125, 125, 125, 0.1); /* Adds a subtle drop shadow */
+}
+
+.btn.search-btn {
+width: 250px;
+border-radius: 5px;
+}
